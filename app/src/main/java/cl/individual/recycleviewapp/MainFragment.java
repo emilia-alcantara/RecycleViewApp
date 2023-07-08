@@ -3,10 +3,14 @@ package cl.individual.recycleviewapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import cl.individual.recycleviewapp.databinding.FragmentMainBinding;
 
@@ -17,6 +21,7 @@ import cl.individual.recycleviewapp.databinding.FragmentMainBinding;
  */
 public class MainFragment extends Fragment {
     private FragmentMainBinding binding;
+    List<String> data = getData();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,7 +67,41 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentMainBinding.inflate(getLayoutInflater(), container, false);
-        // Inflate the layout for this fragment
+        initRecycler();
+        initListeners();
         return binding.getRoot();
+    }
+
+    private void initListeners() {
+        binding.fBotonAgregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                data.add("País " + data.size());
+                binding.rvLista.getAdapter().notifyItemInserted(data.size());
+                binding.rvLista.smoothScrollToPosition(data.size());
+            }
+        });
+    }
+
+    private void initRecycler() {
+
+        MyAdapter countriesAdapter = new MyAdapter();
+        countriesAdapter.setCountries(data);
+
+        binding.rvLista.setAdapter(countriesAdapter);
+        binding.rvLista.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
+
+    }
+
+    private List<String> getData() {
+        ArrayList<String> countries = new ArrayList<>();
+        countries.add("Chile");
+        countries.add("Chile");
+        countries.add("Chile");
+        countries.add("Chile");
+        countries.add("Chile");
+
+
+        return countries;
     }
 }
