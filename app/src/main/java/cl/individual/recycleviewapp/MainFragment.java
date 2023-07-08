@@ -101,8 +101,15 @@ public class MainFragment extends Fragment {
         perritos.add("Maltés");
         perritos.add("Cocker Spaniel");
         perritos.add("Labrador");
-        perritos.add("York Shire");
-
+        perritos.add("Beagle");
+        perritos.add("Rottweiler");
+        perritos.add("Shih Tzu");
+        perritos.add("Gran Danés");
+        perritos.add("Chihuahua");
+        perritos.add("Husky");
+        perritos.add("Dalmata");
+        perritos.add("Doberman");
+        perritos.add("Pitbull");
 
         return perritos;
     }
