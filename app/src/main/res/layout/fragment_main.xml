@@ -11,6 +11,7 @@
         android:id="@+id/rvLista"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="#F0EBE3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +26,7 @@
         android:clickable="true"
         android:contentDescription="@string/bot_n_representado_por_un_signo_m_s"
         android:src="@drawable/baseline_add_circle_outline_24"
+        app:backgroundTint="#7D9D9C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
