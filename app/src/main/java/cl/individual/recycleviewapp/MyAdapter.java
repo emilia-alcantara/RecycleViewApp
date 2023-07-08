@@ -13,10 +13,12 @@ import java.util.List;
 import cl.individual.recycleviewapp.databinding.ItemBinding;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private List<String> countries;
 
-    public void setCountries(List<String> countries) {
-        this.countries = countries;
+    private List<String> perritos;
+
+
+    public void setPerritos(List<String> perritos) {
+        this.perritos = perritos;
     }
 
     @NonNull
@@ -29,13 +31,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        String country = countries.get(position);
-        holder.bind(country);
+        String perro = perritos.get(position);
+        holder.bind(perro);
     }
 
     @Override
     public int getItemCount() {
-        return countries.size();
+        return perritos.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -50,12 +52,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         @Override
         public void onClick(View v) {
             int position = getLayoutPosition();
-            String item =countries.get(position);
-            Toast.makeText(itemView.getContext(), "El elemento seleccionado es: " + item, Toast.LENGTH_LONG).show();
+            String item =perritos.get(position);
+            Toast.makeText(itemView.getContext(), "El perrito seleccionado es: " + item, Toast.LENGTH_LONG).show();
         }
 
-        public void bind(String country) {
-            binding.txtListaItem.setText(country);
+        public void bind(String perro) {
+            binding.txtListaItem.setText(perro);
         }
     }
 }

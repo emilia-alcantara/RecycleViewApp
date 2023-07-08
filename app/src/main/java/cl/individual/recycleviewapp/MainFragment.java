@@ -76,7 +76,7 @@ public class MainFragment extends Fragment {
         binding.fBotonAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                data.add("País " + data.size());
+                data.add("Perrito " + data.size());
                 binding.rvLista.getAdapter().notifyItemInserted(data.size());
                 binding.rvLista.smoothScrollToPosition(data.size());
             }
@@ -85,23 +85,25 @@ public class MainFragment extends Fragment {
 
     private void initRecycler() {
 
-        MyAdapter countriesAdapter = new MyAdapter();
-        countriesAdapter.setCountries(data);
+        MyAdapter perritosAdapter = new MyAdapter();
+        perritosAdapter.setPerritos(data);
 
-        binding.rvLista.setAdapter(countriesAdapter);
+        binding.rvLista.setAdapter(perritosAdapter);
         binding.rvLista.setLayoutManager(new LinearLayoutManager(getActivity().getBaseContext()));
 
     }
 
     private List<String> getData() {
-        ArrayList<String> countries = new ArrayList<>();
-        countries.add("Chile");
-        countries.add("Chile");
-        countries.add("Chile");
-        countries.add("Chile");
-        countries.add("Chile");
+        ArrayList<String> perritos = new ArrayList<>();
+        perritos.add("Yorkie Poo");
+        perritos.add("Pastor Alemán");
+        perritos.add("Golden Retriever");
+        perritos.add("Maltés");
+        perritos.add("Cocker Spaniel");
+        perritos.add("Labrador");
+        perritos.add("York Shire");
 
 
-        return countries;
+        return perritos;
     }
 }
