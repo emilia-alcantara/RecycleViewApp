@@ -53,7 +53,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public void onClick(View v) {
             int position = getLayoutPosition();
             String item =perritos.get(position);
-            Toast.makeText(itemView.getContext(), "El perrito seleccionado es: " + item, Toast.LENGTH_LONG).show();
+            binding.txtListaItem.setText("Seleccionado: " + item);
         }
 
         public void bind(String perro) {
